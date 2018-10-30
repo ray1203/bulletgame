@@ -4,6 +4,7 @@ using UnityEngine;
 //              자신이 만든 클래스 이름 ㅣ MonoBehaviour
 public class PlayerController : MonoBehaviour
 {
+    public GameObject _camera;
     //속도
     [SerializeField]
     float moveSpeed;
@@ -22,7 +23,9 @@ public class PlayerController : MonoBehaviour
     {
         ri = GetComponent<Rigidbody>();
     }
-
+    private void Start()
+    {
+    }
     void Update()
     {
         h = Input.GetAxis("Horizontal");

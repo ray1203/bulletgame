@@ -91,6 +91,11 @@ public class Bullet : MonoBehaviour
         cameraController.ResetPosition();
         Destroy(this.gameObject);
     }
-    
+    private void OnDestroy()
+    {
+        if(GameObject.Find("Player")==true)
+        cameraTransform.GetComponent<TargetFollower>().SetTarget(GameObject.Find("Player").transform);
+        
+    }
 
 }

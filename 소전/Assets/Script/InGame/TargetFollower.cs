@@ -11,7 +11,7 @@ public class TargetFollower : MonoBehaviour
     public Vector3 margin;
 
     public float lerpSpeed = 10f;
-
+    public GameObject _camera;
     Vector3 totalMargin;
 
     void LateUpdate()
@@ -25,8 +25,9 @@ public class TargetFollower : MonoBehaviour
 
     public void SetTarget(Transform _target)
     {
+        
         target = _target;
     }
-
+    
 
 }
