@@ -34,7 +34,7 @@ public class PlayerLight : MonoBehaviour {
 
         try
         {
-            if (!flag)
+            if (!flag && GameObject.Find("Bullet(Clone)"))
             {
                 GetComponent<AudioSource>().Play();
                 _light.SetActive(true);
@@ -57,5 +57,9 @@ public class PlayerLight : MonoBehaviour {
     {
         _light = l;
         _light.SetActive(false);
+    }
+    public void stopSound()
+    {
+        GetComponent<AudioSource>().Stop();
     }
 }

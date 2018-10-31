@@ -19,6 +19,7 @@ public class DestroyBullet : MonoBehaviour {
     {
         if (GameObject.Find("Bullet(Clone)") != null)
         {
+            GameObject.Find("justBit").GetComponent<PlayerLight>().stopSound();
                     GetComponent<AudioSource>().Play();
                     hitArea.SetActive(true);
         
