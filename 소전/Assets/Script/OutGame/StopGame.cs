@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class StopGame : MonoBehaviour {
     int f = 0;
+    public GameObject pauseUI;
     public void stop()
     {
         if (f == 0)
         {
+            pauseUI.SetActive(true);
             Time.timeScale = 0.0f;
             Time.fixedDeltaTime = 0.02f * Time.timeScale;
             f = 1;
@@ -17,6 +19,7 @@ public class StopGame : MonoBehaviour {
             Time.timeScale = 1.0f;
             Time.fixedDeltaTime = 0.02f * Time.timeScale;
             f = 0;
+            pauseUI.SetActive(false);
         }
 
     }
